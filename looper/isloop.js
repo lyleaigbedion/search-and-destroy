@@ -2,7 +2,17 @@
 
 //Complete this algo
 const isLoop = (linkedlist) => {
-
+  let current = linkedlist.head;
+  const whereWeveBeen = {}
+  while (current && !whereWeveBeen[current.value]) { // while not null
+    //console.log(current.value);
+    whereWeveBeen[current.value] = true;
+    current = current.next;
+  }
+  if(!current){
+    return false;
+  }
+  return true
 };
 
 
